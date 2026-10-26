@@ -1,6 +1,6 @@
 # BT3 PS4 Compat
 
-[Espa�ol](README.md)
+[Español](README.md)
 
 An ISO9660 inspection/normalization tool and reproducible packaging workflow for investigating **Budokai Tenkaichi 3 mods on Sony's PS2 emulator for PS4**.
 
@@ -8,7 +8,7 @@ An ISO9660 inspection/normalization tool and reproducible packaging workflow for
 
 ## What was fixed
 
-In the inspected emulator's DVD branch, the root selector searches sectors 257�999 for the first little-endian word `0x0030`. The original mod has a normal 34-byte `.` directory record (`0x22`), so this selector skips the actual root at sector 259. It finds an accidental match in executable data at sector 340, interpreting 589744 bytes as a directory length.
+In the inspected emulator's DVD branch, the root selector searches sectors 257–999 for the first little-endian word `0x0030`. The original mod has a normal 34-byte `.` directory record (`0x22`), so this selector skips the actual root at sector 259. It finds an accidental match in executable data at sector 340, interpreting 589744 bytes as a directory length.
 
 The normalizer adds 14 zero System Use bytes to directory records and normalizes directory sizes to their existing allocated sectors. The `.` record becomes 48 bytes (`0x30`), allowing the selector to choose **259 / 2048**. Game file data and LBAs remain unchanged. This accommodates a specific emulator heuristic; it does not mean the original ISO was invalid.
 

@@ -1,31 +1,31 @@
 # Caso documentado: Anime War vs AF
 
-## Confirmaci�n en hardware
+## Confirmación en hardware
 
 PS4 Fat, firmware 13.50, GoldHEN. Anime War vs Dragon Ball AF V2 (2022), salida local 01.03.
 
-El usuario confirm� que personajes, escenarios y men� de pausa se ven bien y que permite jugar a dos personas. Esta es una prueba real del usuario, no una captura de v�deo remoto. No abarca todos los personajes, escenarios, modos o sesiones largas.
+El usuario confirmó que personajes, escenarios y menú de pausa se ven bien y que permite jugar a dos personas. Esta es una prueba real del usuario, no una captura de vídeo remoto. No abarca todos los personajes, escenarios, modos o sesiones largas.
 
 | Elemento | SHA256 |
 |---|---|
 | ISO de entrada | `11d91bc29bbc557c30172c6755faa0303c06dd90452dcfdafc0dd17fc602fd60` |
 | ISO normalizada, incluido LIMG | `0dfee13a6ddb02c04ef07045726e135ee4b9014da3dc337c32e74dc81cc7e52f` |
-| Revisi�n del emulador, eboot.bin | `83b771a27b1ac03802e4071068885658224732a15dedaed67f120307c6e651e7` |
+| Revisión del emulador, eboot.bin | `83b771a27b1ac03802e4071068885658224732a15dedaed67f120307c6e651e7` |
 
 ## Evidencia del arranque
 
-La reproducci�n local con las instrucciones del selector DVD mostr� selecci�n 340/589744 antes y 259/2048 despu�s. El registro TTY de la PS4 confirm� ra�z 259, longitud 2048 y detecci�n de SLUS-21678. Se modificaron cuatro directorios ISO9660 y el tama�o de ra�z en el descriptor primario. Los contenidos y LBA de archivos se conservaron.
+La reproducción local con las instrucciones del selector DVD mostró selección 340/589744 antes y 259/2048 después. El registro TTY de la PS4 confirmó raíz 259, longitud 2048 y detección de SLUS-21678. Se modificaron cuatro directorios ISO9660 y el tamaño de raíz en el descriptor primario. Los contenidos y LBA de archivos se conservaron.
 
-## Evidencia de gr�ficos
+## Evidencia de gráficos
 
-La versi�n 01.01 arrancaba, pero el usuario aport� seis fotos con geometr�a incompleta, superficies negras y manchas en la pausa. La versi�n 01.02, que solo retiraba jit-sync, no se prob� por separado. El perfil completo de la 01.03 est� documentado en el README y fue el validado. No se puede atribuir la soluci�n a una sola l�nea con la evidencia actual.
+La versión 01.01 arrancaba, pero el usuario aportó seis fotos con geometría incompleta, superficies negras y manchas en la pausa. La versión 01.02, que solo retiraba jit-sync, no se probó por separado. El perfil completo de la 01.03 está documentado en el README y fue el validado. No se puede atribuir la solución a una sola línea con la evidencia actual.
 
-El generador p�blico conserva las opciones gr�ficas y omite los hooks diagn�sticos de la sesi�n original, que depend�an de direcciones de ese ejecutable. **La preparaci�n generada por la nueva herramienta no tiene todav�a una prueba propia de ejecuci�n en PS4**: la prueba real corresponde al paquete 01.03 anterior.
+El generador público conserva las opciones gráficas y omite los hooks diagnósticos de la sesión original, que dependían de direcciones de ese ejecutable. **La preparación generada por la nueva herramienta no tiene todavía una prueba propia de ejecución en PS4**: la prueba real corresponde al paquete 01.03 anterior.
 
 ## Mandos
 
-La sesi�n problem�tica asignaba tres usuarios a posiciones 0/1/2. Tras iniciar dos usuarios con un mando cada uno, los registros mostraron posiciones 0/1 y el usuario confirm� versus local. No hubo parche de c�digo de mandos. Esta observaci�n puede orientar un diagn�stico, pero no demuestra una soluci�n universal.
+La sesión problemática asignaba tres usuarios a posiciones 0/1/2. Tras iniciar dos usuarios con un mando cada uno, los registros mostraron posiciones 0/1 y el usuario confirmó versus local. No hubo parche de código de mandos. Esta observación puede orientar un diagnóstico, pero no demuestra una solución universal.
 
 ## Lo que debe incluir un reporte nuevo
 
-Modelo/FW, nombre y versi�n del mod, SHA256 de ISO, ID de arranque, revisi�n de emulador, ra�z elegida antes/despu�s, perfil, instalaci�n correcta, batalla completa, estado gr�fico y prueba de dos mandos. No publicar juegos ni volcados de memoria de usuarios.
+Modelo/FW, nombre y versión del mod, SHA256 de ISO, ID de arranque, revisión de emulador, raíz elegida antes/después, perfil, instalación correcta, batalla completa, estado gráfico y prueba de dos mandos. No publicar juegos ni volcados de memoria de usuarios.
