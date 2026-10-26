@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+build/
+inputs/
+output/
+*.iso
+*.pkg
+*.bin
+*.self
+*.prx
+*.sprx
+*.crack
+*.sfo
+*.partial
+*.db
+*.log
+.env
